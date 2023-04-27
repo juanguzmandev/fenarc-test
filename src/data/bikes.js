@@ -1,3 +1,5 @@
+// Little bikes data mock to use all over the application
+
 export const bikes = [
     {
         slug: 'eb-1',

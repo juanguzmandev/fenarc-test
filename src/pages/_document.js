@@ -7,6 +7,9 @@ export default function Document() {
       <body className='bg-black h-full m-0'>
         <Main />
         <NextScript />
+        {/* Modals to be shown when user confirms the hiring order */}
+
+        {/* First modal (Hiring success confirmation) */}
         <input type="checkbox" id="confirmation-modal" className="modal-toggle" />
         <div className="modal font-mono font-bold z-50">
           <div className="modal-box">
@@ -17,6 +20,8 @@ export default function Document() {
             </div>
           </div>
         </div>
+
+        {/* Second modal (Hiring) */}
         <input type="checkbox" id="my-modal" className="modal-toggle" />
         <div className="modal font-mono font-bold" id="first-modal">
           <div className="modal-box">

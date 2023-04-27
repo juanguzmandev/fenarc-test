@@ -4,12 +4,12 @@ import { useEffect } from 'react'
 
 export default function HireForm({ bikeSlug }) { 
 
-    useEffect(() => {
+    useEffect(() => { {/* This hook clears the localStorage when page is loaded */}
         (typeof localStorage !== undefined) && localStorage.clear();
         localStorage.setItem('total_price', '10$');
     });
 
-    const createBudget = () => {
+    const createBudget = () => { {/* This function saves the data in localStorage and get the price of hiring */}
         let type = bikes.find(bike => bike && bike.slug == bikeSlug).type;
         let option_days = (type === 'r' && 3) || (type === 'o' && 5) || 1;
         let hiring_days = localStorage.getItem('hiring_days') ? localStorage.getItem('hiring_days') : option_days;
@@ -26,13 +26,14 @@ export default function HireForm({ bikeSlug }) {
         }
     };
 
-    const handleChange = (ev) => {
+    const handleChange = (ev) => { {/* This function hear the changes on the input fields */}
         (typeof window !== undefined) && localStorage.setItem(ev.target.name, ev.target.value);
         (ev.target.name == 'hiring_start_day' || ev.target.name == 'hiring_days') && createBudget();
     };
 
     return (
         <form>
+            {/* This is the form to hire a bike */}
             <div className="grid md:grid-cols-2 md:gap-6">
                 <div className="relative z-0 w-full mb-6 group">
                     <input type="text" name="name" id="name" onChange={handleChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />

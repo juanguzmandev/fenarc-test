@@ -3,7 +3,6 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 import HireForm from '../../components/hireform'
-//import BikeCard from '../../components/bikecard'
 const BikeCard = dynamic(
     () => import('../../components/bikecard'),
     { ssr: false }
@@ -23,6 +22,7 @@ export default function Renting() {
     return (
         <>
         <main className="flex lg:flex-wrap flex-col items-center lg:flex-row font-mono font-bold px-8 h-full lg:h-screen">
+            {/* This is the left side of the page where you can find the bike information card */}
             <aside className='flex justify-center mb-10 lg:mb-0 lg:w-3/6 w-8/12 lg:px-8 h-full'>
                 <BikeCard>
                     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-neutral-900 dark:border-gray-700 m-5 pb-3">
@@ -44,6 +44,7 @@ export default function Renting() {
                     </div>
                 </BikeCard>
             </aside>
+            {/* This is the right side of the page where you can find the form to hire a bike */}
             <section className='my-8 lg:w-6/12 w-8/12 px-8 pb-8'>
                 <HireForm bikeSlug={slug} />
             </section>

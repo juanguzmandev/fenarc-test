@@ -12,6 +12,7 @@ export default function Home() {
   return (
       <BikesList>
         <main className='flex justify-center flex-wrap font-mono font-bold p-8'>
+          {/* This lists all the bikes in the store */}
           {bikes.map(bike => {
             return (
               <BikeCard key={bike.slug}>
